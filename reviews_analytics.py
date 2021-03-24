@@ -13,5 +13,10 @@ with open('reviews.txt', 'r') as f:
 		length = length + len(data[i])
 		i += 1
 print('The average lengrh of the reviews is', length / len(data)) 
-
 print('File read completed. There are ', len(data), 'records in total. ')
+
+new = []
+for d in data:
+	if len(d) < 100:
+		new.append(d)
+print('There are ', len(new), 'data with less than 100 words.')
